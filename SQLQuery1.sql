@@ -1,0 +1,5 @@
+SELECT Email
+FROM dbo.CUSTOMERS
+JOIN dbo.CONTRACTS ON dbo.CUSTOMERS.ID = dbo.CONTRACTS.CustomerId
+JOIN dbo.LEASES ON dbo.CONTRACTS.LeaseId = dbo.Leases.ID
+WHERE dbo.LEASES.ExpirationDate < GETDATE();
